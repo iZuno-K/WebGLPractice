@@ -91,16 +91,17 @@ window.onload = function(){
 	dUniLocation[0] = gl.getUniformLocation(dPrg, 'resolution');
 	
 	// テクスチャの幅と高さ
-	var TEXTURE_WIDTH  = 512;
-	var TEXTURE_HEIGHT = 512;
+	var TEXTURE_WIDTH  = 256;
+	var TEXTURE_HEIGHT = 256;
 	var resolution = [TEXTURE_WIDTH, TEXTURE_HEIGHT];
 	
 	// 頂点
-	var vertices = new Array(TEXTURE_WIDTH * TEXTURE_HEIGHT);
+	// var vertices = new Array(TEXTURE_WIDTH * TEXTURE_HEIGHT);
+	var vertices = new Array(64 * 64);
 	
 	// 頂点のインデックスを連番で割り振る
 	for(i = 0, j = vertices.length; i < j; i++){
-		vertices[i] = i;
+		vertices[i] = i+120*256;
 	}
 	
 	// 頂点情報からVBO生成
